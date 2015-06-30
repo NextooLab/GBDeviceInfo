@@ -31,6 +31,7 @@
 @property (strong, atomic, readwrite) NSString              *modelString;
 @property (assign, atomic, readwrite) GBDeviceModel         model;
 @property (assign, atomic, readwrite) GBDeviceDisplay       display;
+@property (strong, atomic, readwrite) NSString              *displayString;
 @property (assign, atomic, readwrite) GBDisplayInfo         displayInfo;
 
 @end
@@ -79,6 +80,7 @@
         
         // Display
         self.display = [self.class _display];
+        self.displayString = [self.class _displayString];
         
         // iOS version
         self.osVersion = [self.class _osVersion];
@@ -303,6 +305,35 @@
         return GBDeviceDisplayUnknown;
     }
 }
+
++ (NSString *)_displayString {
+    //GBDeviceDisplay dis
+    switch ([self _display]) {
+        case GBDeviceDisplayiPad :
+            return @"DisplayiPad";
+            break;
+        case GBDeviceDisplayiPhone35Inch :
+            return @"DisplayiPhone35Inch";
+            break;
+        case GBDeviceDisplayiPhone4Inch :
+            return @"DisplayiPhone4Inch";
+            break;
+        case GBDeviceDisplayiPhone47Inch :
+            return @"DisplayiPhone47Inch";
+            break;
+        case GBDeviceDisplayiPhone55Inch :
+            return @"DisplayiPhone55Inch";
+            break;
+        case GBDeviceDisplayUnknown:
+            return @"DisplayUnknown";
+            break;
+        default:
+            return @"DisplayUnknown";
+            break;
+        
+    }
+}
+
 
 + (GBOSVersion)_osVersion {
     NSInteger majorVersion = 0;

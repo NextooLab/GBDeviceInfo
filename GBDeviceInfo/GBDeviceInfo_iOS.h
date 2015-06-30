@@ -45,6 +45,12 @@
 @property (assign, atomic, readonly) GBDeviceDisplay    display;
 
 /**
+ The human readable display identifier, e.g. "DisplayiPhone47Inch"
+ */
+@property (strong, atomic, readonly) NSString    *displayString;
+
+
+/**
  Information about the display.
  */
 @property (assign, atomic, readonly) GBDisplayInfo      displayInfo;
