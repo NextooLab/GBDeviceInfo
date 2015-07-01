@@ -19,6 +19,7 @@
 		8A3F56ED1A977EB300B84D6F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3F56E91A977E9F00B84D6F /* Cocoa.framework */; };
 		8A3F56EE1A977ED500B84D6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A38F596162DA1C100BCF240 /* Foundation.framework */; };
 		8A521B281701CE1E00A89BE4 /* GBDeviceInfoTypes_OSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A1B11B516F2246000BDDD2A /* GBDeviceInfoTypes_OSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA0B60831B42F9CB00614257 /* UCKReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0B60821B42F9CB00614257 /* UCKReachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +56,8 @@
 		8A3F56E91A977E9F00B84D6F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		8A3F56EB1A977EA500B84D6F /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/CoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		8A521B291701CE7800A89BE4 /* GBDeviceInfo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GBDeviceInfo-Info.plist"; sourceTree = "<group>"; };
+		CA0B60811B42F9CB00614257 /* UCKReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCKReachability.h; sourceTree = "<group>"; };
+		CA0B60821B42F9CB00614257 /* UCKReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCKReachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 		8A1B11A816F221C400BDDD2A /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				CA0B60811B42F9CB00614257 /* UCKReachability.h */,
+				CA0B60821B42F9CB00614257 /* UCKReachability.m */,
 				8A1B11B416F2242500BDDD2A /* GBDeviceInfoTypes_iOS.h */,
 				8A38F59B162DA1C100BCF240 /* GBDeviceInfo_iOS.h */,
 				8A38F59D162DA1C100BCF240 /* GBDeviceInfo_iOS.m */,
@@ -272,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A38F59E162DA1C100BCF240 /* GBDeviceInfo_iOS.m in Sources */,
+				CA0B60831B42F9CB00614257 /* UCKReachability.m in Sources */,
 				8A3F56E71A977C3700B84D6F /* GBDeviceInfo_Common.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

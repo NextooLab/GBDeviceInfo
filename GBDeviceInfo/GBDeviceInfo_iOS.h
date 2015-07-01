@@ -21,6 +21,8 @@
 
 #import "GBDeviceInfoTypes_iOS.h"
 
+#import "UCKReachability.h"
+
 @interface GBDeviceInfo : GBDeviceInfo_Common
 
 /**
@@ -59,5 +61,11 @@
  Is the device jailbroken?
  */
 @property (assign, atomic, readonly) BOOL               isJailbroken;
+
+/**
+ The device connection type to the internet (NotConnected/Wifi/Mobile)
+ */
+@property (assign, atomic, readonly) NSString   *networkType;
+
 
 @end

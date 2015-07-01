@@ -33,10 +33,23 @@
 @property (assign, atomic, readwrite) GBDeviceDisplay       display;
 @property (strong, atomic, readwrite) NSString              *displayString;
 @property (assign, atomic, readwrite) GBDisplayInfo         displayInfo;
+@property (assign, atomic, readwrite) NSString              *networkType;
 
 @end
 
 @implementation GBDeviceInfo
+
+
+/** Network type name:Mobile. */
+static NSString *const kNetworkTypeMobile = @"Mobile";
+
+/** Network type name:Wi-Fi. */
+static NSString *const kNetworkTypeWifi = @"Wi-Fi";
+
+/** Network type name:Unknown. */
+static NSString *const kNetworkTypeNone = @"Unknown";
+
+
 
 @dynamic isJailbroken;
 
@@ -90,6 +103,10 @@
         
         // CPU info
         self.cpuInfo = [self.class _cpuInfo];
+        
+        // Network info
+        self.networkType = [self scanNetworkData];
+        
     }
     
     return self;
@@ -347,6 +364,31 @@
     
     return GBOSVersionMake(majorVersion, minorVersion, patchVersion);
 }
+
+
+- (NSString*)scanNetworkData {
+    NSString *networkTypeName;
+    
+    UCKReachability *reachablity = [UCKReachability reachabilityForInternetConnection];
+    UCKNetworkStatus status = [reachablity currentReachabilityStatus];
+    
+    switch (status) {
+        case NotReachable:
+            networkTypeName = kNetworkTypeNone;
+            break;
+            
+        case ReachableViaWWAN:
+            networkTypeName = kNetworkTypeMobile;
+            break;
+            
+        case ReachableViaWiFi:
+            networkTypeName = kNetworkTypeWifi;
+            break;
+    }
+    
+    return networkTypeName;
+}
+
 
 #pragma mark - Integrity protection
 
