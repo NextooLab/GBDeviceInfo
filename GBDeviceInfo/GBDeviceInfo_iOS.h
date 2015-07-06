@@ -67,5 +67,10 @@
  */
 @property (assign, atomic, readonly) NSString   *networkType;
 
+/**
+ Information about memory (free space / total space)
+ */
+@property (assign, atomic, readonly) NSDictionary   *memoryInformation;
+
 
 @end

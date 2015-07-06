@@ -34,6 +34,8 @@
 @property (strong, atomic, readwrite) NSString              *displayString;
 @property (assign, atomic, readwrite) GBDisplayInfo         displayInfo;
 @property (assign, atomic, readwrite) NSString              *networkType;
+@property (assign, atomic, readwrite) NSDictionary          *memoryInformation;
+
 
 @end
 
@@ -100,6 +102,7 @@ static NSString *const kNetworkTypeNone = @"Unknown";
         
         // RAM
         self.physicalMemory = [self.class _physicalMemory];
+        self.memoryInformation = [self scanMemoryData];
         
         // CPU info
         self.cpuInfo = [self.class _cpuInfo];
@@ -410,13 +413,7 @@ static NSString *const kNetworkTypeNone = @"Unknown";
         NSLog(@"Error scan memory data:%@", error);
         return nil;
     }
-    
-    
-
-
-
-
-
+}
 
 
 #pragma mark - Integrity protection
