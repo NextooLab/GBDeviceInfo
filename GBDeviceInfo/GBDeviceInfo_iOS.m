@@ -390,6 +390,35 @@ static NSString *const kNetworkTypeNone = @"Unknown";
 }
 
 
+- (NSDictionary*)scanMemoryData {
+    float totalSpace;
+    float freeSpace;
+    
+    NSError *error = nil;
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfFileSystemForPath:[paths lastObject] error:&error];
+    
+    if (dictionary) {
+        freeSpace = [dictionary[NSFileSystemFreeSize] floatValue] / 1048576;
+        totalSpace = [dictionary[NSFileSystemSize] floatValue] / 1048576;
+        return [NSDictionary dictionaryWithObjectsAndKeys:  [NSString stringWithFormat:@"%f", freeSpace], @"freeSpace",
+                                                            [NSString stringWithFormat:@"%f", totalSpace], @"totalSpace",
+                                                            nil];
+    }
+    else {
+        NSLog(@"Error scan memory data:%@", error);
+        return nil;
+    }
+    
+    
+
+
+
+
+
+
+
 #pragma mark - Integrity protection
 
 #if !DEBUG
