@@ -70,7 +70,7 @@
 /**
  Information about memory (free space / total space)
  */
-@property (assign, atomic, readonly) NSDictionary   *memoryInformation;
+@property (strong, atomic, readonly) NSDictionary   *memoryInformation;
 
 
 @end
