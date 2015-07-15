@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.author                    = 'Luka Mirosevic'      
   s.homepage                  = 'https://github.com/lmirosevic/GBDeviceInfo'
   s.license                   = { :type => 'Apache License, Version 2.0', :file => 'LICENSE' }
-  s.source                    = { :git => 'https://github.com/lmirosevic/GBDeviceInfo.git', :tag => s.version.to_s }
+  s.source                    = { :git => 'https://github.com/NextooLab/GBDeviceInfo.git', :tag => s.version.to_s }
 
   s.ios.source_files          = 'GBDeviceInfo/*_iOS.{h,m}', 'GBDeviceInfo/*_Common.{h,m}', 'GBDeviceInfo/GBDeviceInfo.h', 'GBDeviceInfo/GBDeviceInfoInterface.h', 'GBDeviceInfo/GBDeviceInfo_Subclass.h', 'GBDeviceInfo/UCKReachability.{h,m}'
   s.ios.public_header_files   = 'GBDeviceInfo/*_iOS.h', 'GBDeviceInfo/*_Common.h', 'GBDeviceInfo/GBDeviceInfo.h', 'GBDeviceInfo/GBDeviceInfoInterface.h', 'GBDeviceInfo/GBDeviceInfo_Subclass.h', 'GBDeviceInfo/UCKReachability.h'
