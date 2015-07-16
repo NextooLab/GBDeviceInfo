@@ -34,7 +34,7 @@
 @property (strong, atomic, readwrite) NSString              *displayString;
 @property (assign, atomic, readwrite) GBDisplayInfo         displayInfo;
 @property (assign, atomic, readwrite) NSString              *networkType;
-@property (assign, atomic, readwrite) NSDictionary          *memoryInformation;
+@property (strong, atomic, readwrite) NSDictionary          *memoryInformation;
 
 
 @end
